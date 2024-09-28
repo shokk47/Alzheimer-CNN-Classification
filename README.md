@@ -1,6 +1,11 @@
 # Classificazione Multiclasse dell'Alzheimer Basata su CNN
 
-Questa repository contiene il codice e la documentazione per il progetto **"Classificazione Multiclasse dell'Alzheimer Basata su Reti Neurali Convoluzionali Profonde"**, sviluppato da Giovanni Cirigliano e Annarita Bruno.
+Questa repository contiene il codice e la documentazione per il progetto "Classificazione Multiclasse dell'Alzheimer Basata su Reti Neurali Convoluzionali Profonde", sviluppato da Giovanni Cirigliano e Annarita Bruno. Abbiamo testato tre diverse configurazioni di dati per addestrare e valutare il modello:
+- Addestramento con dataset sbilanciato senza data augmentation.
+- Addestramento con data augmentation applicata solo al set di addestramento.
+- Addestramento con data augmentation applicata a tutti i set (training, validation e test).
+
+Nella configurazione migliore, il modello ha raggiunto un'accuratezza del **98.23%** sul test set, dimostrando la capacità di classificare in modo efficace i diversi stadi della malattia di Alzheimer utilizzando immagini MRI.
 
 ## Indice
 - [Introduzione](#introduzione)
@@ -59,16 +64,22 @@ Il modello è stato addestrato utilizzando la piattaforma Kaggle, che fornisce r
 Dopo l'addestramento, il modello ha prodotto i seguenti risultati in termini di accuratezza e capacità di generalizzazione. Di seguito sono riportate le performance del modello per le diverse configurazioni:
 
 ### Modello con Dataset Sbilanciato (Senza Data Augmentation)
+- **Numero di Epoche**: 25
+- **Learning Rate**: 0.0001
 - **Test Accuracy**: 97.71%
-- Le classi meno rappresentate (Very Mild Demented, Mild Demented) hanno ottenuto prestazioni inferiori a causa dello sbilanciamento del dataset.
+- **Test Loss**: 0.1229
 
 ### Modello con Augmentazione del Training Set
+- **Numero di Epoche**: 25
+- **Learning Rate**: 0.0001
 - **Test Accuracy**: 98.23%
-- L'introduzione della data augmentation nel set di addestramento ha migliorato significativamente l'accuratezza generale, permettendo al modello di generalizzare meglio su classi meno rappresentate.
+- **Test Loss**: 0.0819
 
 ### Modello con Augmentazione di Tutti i Set (Training, Validation e Test)
+- **Numero di Epoche**: 6 (Early Stopping)
+- **Learning Rate**: 0.0001
 - **Test Accuracy**: 28.61%
-- Nonostante l'early stopping, il modello ha sofferto di sovradattamento dovuto all'augmentazione eccessiva di tutti i set (train, validation e test), portando a una drastica riduzione delle performance.
+- **Test Loss**: 2.0714
 
 ### Metriche di Valutazione
 
