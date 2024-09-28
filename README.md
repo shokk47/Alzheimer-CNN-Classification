@@ -34,6 +34,7 @@ Le immagini del dataset sono in scala di grigi e sono state ridimensionate a 176
 - **Validation Set**: 15% dei dati
 - **Test Set**: 15% dei dati
 
+![Distribuzione classi prima del bilanciamento](imgs/distribuzioneClassiPrimaBilanciamento.png)
 
 Prima di addestrare il modello, abbiamo applicato delle tecniche di **data augmentation** per bilanciare il dataset e migliorare la capacità di generalizzazione del modello. Le trasformazioni applicate includono:
 
@@ -41,6 +42,10 @@ Prima di addestrare il modello, abbiamo applicato delle tecniche di **data augme
 - **Traslazioni**
 - **Zoom**
 - **Flip orizzontali**
+
+Di seguito è riportata una lista di esempi di immagini del training set modificate attraverso tecniche di data augmentation.
+
+![Training Samples trasformati](imgs/trainingSetBilanciato.png)
 
 ## Architettura del Modello
 
