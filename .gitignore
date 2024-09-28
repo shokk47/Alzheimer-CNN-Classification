@@ -1,0 +1,29 @@
+# Ignora i file .DS_Store generati da macOS
+.DS_Store
+
+# Ignora file di configurazione degli IDE
+.idea/
+.vscode/
+
+# Ignora ambienti virtuali
+venv/
+env/
+
+# Ignora file di output Jupyter Notebook
+.ipynb_checkpoints/
+
+# Ignora file di log e cache
+*.log
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignora file di backup
+*.bak
+*.swp
+
+# Ignora dipendenze di pacchetti
+*.egg-info/
+dist/
+build/
